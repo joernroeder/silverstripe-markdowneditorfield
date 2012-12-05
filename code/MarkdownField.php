@@ -11,11 +11,11 @@ class MarkdownField extends TextareaField {
 		if($this->disabled) $attributes['disabled'] = 'disabled';
 		$properties["class"] = "markdown_Input";
 
-		$properties["LinkSuggest"] = $this->Link() . '/linksuggest';
-		$properties["ImageSuggest"] = $this->Link() . '/imagesuggest';
-		$properties["FindLink"] = $this->Link() . '/getlinktoid';
+		$properties["LinkSuggest"] = $this->Link('linksuggest');
+		$properties["ImageSuggest"] = $this->Link('imagesuggest');
+		$properties["FindLink"] = $this->Link('getlinktoid');
 
-		$properties["Editor"] = $this->Link() . '/getEditor';
+		$properties["Editor"] = $this->Link('getEditor');
 		$obj = ($properties) ? $this->customise($properties) : $this;
 		return $obj->renderWith($this->getTemplate());
 	}
